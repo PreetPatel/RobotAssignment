@@ -46,10 +46,6 @@ public class AggrgateRobot extends Robot{
         super(x, y, deltaX, deltaY, width, height);
     }
 
-    /*public AggrgateRobot(int x, int y, int deltaX, int deltaY, int width, int height) {
-        super(x, y, deltaX, deltaY, width, height);
-    }*/
-
     @Override
     public void paint(Painter painter) {
         try{

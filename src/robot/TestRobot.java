@@ -88,4 +88,31 @@ public class TestRobot {
 		assertEquals("(rectangle 10,90,25,35)(rectangle 0,100,25,35)"
 				+ "(rectangle 12,85,25,35)", _painter.toString());
 	}
+
+	/**
+	*Test detection of bounce of robot on a horizontal and vertical wall
+	 */
+	@Test
+	public void testRobotDetectBounceOffVerticalWall() {
+		String result;
+		WheeledRobot robot = new WheeledRobot(100, 20, 12, 15);
+		result = "(Horizontal Bounce: " + robot.didBounceOffHorizontal() + " , Vertical Bounce: " + robot.didBounceOffVertical() + ")" ;
+		robot.move(135, 10000);
+		result = result + "(Horizontal Bounce: " + robot.didBounceOffHorizontal() + " , Vertical Bounce: " + robot.didBounceOffVertical() + ")" ;
+		robot.move(135, 10000);
+		result = result + "(Horizontal Bounce: " + robot.didBounceOffHorizontal() + " , Vertical Bounce: " + robot.didBounceOffVertical() + ")" ;
+		assertEquals("(Horizontal Bounce: false , Vertical Bounce: false)(Horizontal Bounce: false , Vertical Bounce: true)(Horizontal Bounce: false , Vertical Bounce: false)", result);
+	}
+
+	@Test
+	public void testRobotDetectBounceOffHorizontalWall() {
+		String result;
+		DynamicWheeledRobot robot = new DynamicWheeledRobot(20, 100, 12, 15);
+		result = "(Horizontal Bounce: " + robot.didBounceOffHorizontal() + " , Vertical Bounce: " + robot.didBounceOffVertical() + ")" ;
+		robot.move(10000, 140);
+		result = result + "(Horizontal Bounce: " + robot.didBounceOffHorizontal() + " , Vertical Bounce: " + robot.didBounceOffVertical() + ")" ;
+		robot.move(10000, 140);
+		result = result + "(Horizontal Bounce: " + robot.didBounceOffHorizontal() + " , Vertical Bounce: " + robot.didBounceOffVertical() + ")" ;
+		assertEquals("(Horizontal Bounce: false , Vertical Bounce: false)(Horizontal Bounce: true , Vertical Bounce: false)(Horizontal Bounce: false , Vertical Bounce: false)", result);
+	}
 }
