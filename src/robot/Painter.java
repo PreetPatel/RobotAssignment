@@ -32,5 +32,7 @@ public interface Painter {
 
 	public void setColor(Color robotColor);
 
+	public Color getColor();
+
 	public void drawImage(Image image, int x, int y, ImageObserver observer);
 }

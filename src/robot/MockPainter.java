@@ -52,8 +52,14 @@ public class MockPainter implements Painter {
 
 	@Override
 	public void setColor(Color robotColor) {
-		_log.append("(colour " + robotColor + ")");
+		_log.append("(Set Colour " + robotColor + ")");
 		_storedColor = robotColor;
+	}
+
+	@Override
+	public Color getColor() {
+		_log.append("(Got Color: " +_storedColor + ")");
+		return null;
 	}
 
 	@Override

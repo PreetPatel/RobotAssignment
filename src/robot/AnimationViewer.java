@@ -28,7 +28,7 @@ import javax.swing.Timer;
 @SuppressWarnings("serial")
 public class AnimationViewer extends JPanel implements ActionListener {
 	// Frequency in milliseconds for the Timer to generate events.
-	private static final int DELAY = 2000;
+	private static final int DELAY = 20;
 
 	// Collection of Robots to animate.
 	private List<Robot> _robots;
@@ -43,7 +43,7 @@ public class AnimationViewer extends JPanel implements ActionListener {
 		_robots = new ArrayList<Robot>();
 	
 		// Populate the list of Robots.
-		/*_robots.add(new WheeledRobot(0, 0, 2, 3));
+		_robots.add(new WheeledRobot(0, 0, 2, 3));
 		_robots.add(new WheeledRobot(10, 10, 5, 7));
 		_robots.add(new FlyingRobot(13,13,4,8));
 		_robots.add(new TrackedRobot(13,23,2,5, 60,60));
@@ -53,7 +53,7 @@ public class AnimationViewer extends JPanel implements ActionListener {
 		_robots.add(new DynamicWheeledRobot(23,16,2,6, 45,45));
 		_robots.add(new DynamicWheeledRobot(90,1,7,6, 60,45, Color.red));
 		_robots.add(new AggrgateRobot(11,19,6,4, 45,45));
-		_robots.add(new AggrgateRobot(60,11,3,4, 30,30));*/
+		_robots.add(new AggrgateRobot(60,11,3,4, 30,30));
 		_robots.add(new DynamicWheeledRobot(5, 5, -12, -15));
 
 
@@ -110,7 +110,7 @@ public class AnimationViewer extends JPanel implements ActionListener {
 				frame.add(new AnimationViewer());
 		
 				// Set window properties.
-				frame.setSize(125, 135);
+				frame.setSize(500, 500);
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 			}

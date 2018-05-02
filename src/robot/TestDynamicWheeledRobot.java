@@ -26,7 +26,7 @@ public class TestDynamicWheeledRobot {
         robot.paint(_painter);
         robot.move(135, 10000);
         robot.paint(_painter);
-        assertEquals("(rectangle 100,20,25,35)(colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 110,35,25,35)(colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 98,50,25,35)", _painter.toString());
+        assertEquals("(rectangle 100,20,25,35)(Got Color: null)(Set Colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 110,35,25,35)(Set Colour null)(Got Color: null)(Set Colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 98,50,25,35)(Set Colour null)", _painter.toString());
     }
 
     /**
@@ -41,7 +41,7 @@ public class TestDynamicWheeledRobot {
         robot.paint(_painter);
         robot.move(10000, 10000);
         robot.paint(_painter);
-        assertEquals("(rectangle 10,20,25,35)(colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 0,35,25,35)(colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 12,50,25,35)", _painter.toString());
+        assertEquals("(rectangle 10,20,25,35)(Got Color: null)(Set Colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 0,35,25,35)(Set Colour null)(Got Color: null)(Set Colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 12,50,25,35)(Set Colour null)", _painter.toString());
     }
 
     @Test
@@ -78,7 +78,7 @@ public class TestDynamicWheeledRobot {
         robot.paint(_painter);
         robot.move(125, 135);
         robot.paint(_painter);
-        assertEquals("(rectangle 95,95,25,35)(colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 100,100,25,35)(colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 88,85,25,35)", _painter.toString());
+        assertEquals("(rectangle 95,95,25,35)(Got Color: null)(Set Colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 100,100,25,35)(Set Colour null)(Got Color: null)(Set Colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 88,85,25,35)(Set Colour null)", _painter.toString());
     }
 
     @Test
@@ -89,7 +89,7 @@ public class TestDynamicWheeledRobot {
         robot.paint(_painter);
         robot.move(125, 135);
         robot.paint(_painter);
-        assertEquals("(rectangle 10,90,25,35)(colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 0,100,25,35)(colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 12,85,25,35)", _painter.toString());
+        assertEquals("(rectangle 10,90,25,35)(Got Color: null)(Set Colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 0,100,25,35)(Set Colour null)(Got Color: null)(Set Colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 12,85,25,35)(Set Colour null)", _painter.toString());
     }
 
     @Test
@@ -100,7 +100,7 @@ public class TestDynamicWheeledRobot {
         robot.paint(_painter);
         robot.move(125, 135);
         robot.paint(_painter);
-        assertEquals("(rectangle 95,5,25,35)(colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 100,0,25,35)(colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 88,15,25,35)", _painter.toString());
+        assertEquals("(rectangle 95,5,25,35)(Got Color: null)(Set Colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 100,0,25,35)(Set Colour null)(Got Color: null)(Set Colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 88,15,25,35)(Set Colour null)", _painter.toString());
     }
 
     @Test
@@ -111,7 +111,7 @@ public class TestDynamicWheeledRobot {
         robot.paint(_painter);
         robot.move(125, 135);
         robot.paint(_painter);
-        assertEquals("(rectangle 5,5,25,35)(colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 0,0,25,35)(colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 12,15,25,35)", _painter.toString());
+        assertEquals("(rectangle 5,5,25,35)(Got Color: null)(Set Colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 0,0,25,35)(Set Colour null)(Got Color: null)(Set Colour java.awt.Color[r=0,g=0,b=0])(filled rectangle 12,15,25,35)(Set Colour null)", _painter.toString());
     }
 
 

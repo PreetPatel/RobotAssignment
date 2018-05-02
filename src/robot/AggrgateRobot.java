@@ -60,8 +60,7 @@ public class AggrgateRobot extends Robot{
 
         }
         catch (IOException e){
-            System.out.println("Not found");
-            e.printStackTrace();
+            System.out.println("Image for AggregateRobot Not found");
         }
     }
 }

@@ -52,6 +52,11 @@ public class GraphicsPainter implements Painter {
 		_g.setColor(robotColor);
 	}
 
+	@Override
+	public Color getColor() {
+		return _g.getColor();
+	}
+
 	public void drawImage(Image image, int x, int y, ImageObserver observer) {
 		_g.drawImage(image,x,y,observer);
 

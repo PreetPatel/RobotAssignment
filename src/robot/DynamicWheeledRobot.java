@@ -37,9 +37,11 @@ public class DynamicWheeledRobot extends WheeledRobot{
 
     public void drawFilledRobot(Painter painter) {
 
+        Color temp = painter.getColor();
         painter.setColor(_RobotColor);
         painter.fillRect(_x,_y,_width,_height);
         hasBouncedOffVertical = true;
+        painter.setColor(temp);
     }
 
     /**
