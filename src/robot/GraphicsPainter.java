@@ -59,7 +59,19 @@ public class GraphicsPainter implements Painter {
 
 	public void drawImage(Image image, int x, int y, ImageObserver observer) {
 		_g.drawImage(image,x,y,observer);
+	}
 
+	@Override
+	public void translate(int x, int y) {
+		_g.translate(x,y);
+	}
+
+	@Override
+	public void drawCentredText(String name, int x, int y, int width, int height) {
+		FontMetrics metrics = _g.getFontMetrics();
+		int xPosition = x+(width/2) - metrics.stringWidth(name)/2;
+		int yPosition = y+((height - metrics.getHeight()) / 2) + metrics.getAscent();
+		_g.drawString(name,xPosition,yPosition);
 	}
 
 

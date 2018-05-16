@@ -1,5 +1,8 @@
 package robot;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Abstract superclass to represent the general concept of a Robot. This class
  * defines state common to all special kinds of Robot instances and implements
@@ -40,6 +43,10 @@ public abstract class Robot {
 	protected boolean _didBounceOffVertical = false;
 
 	protected boolean _didBounceOffHorizontal = false;
+
+	protected CarrierRobot _ParentCarrierRobot = null;
+
+	protected String _Name = null;
 	// ===
 
 	/**
@@ -115,11 +122,24 @@ public abstract class Robot {
 	}
 
 	/**
+	 * Method implemented to paint the text on a robot when called by the GraphicsPainter
+	 * if the robot is associated with a name. Once the name is painted, the method calls
+	 * the specific robots paint method that paints the overall shape of the robot.
+	 * @param painter the Painter object used for drawing
+	 */
+	public void paint(Painter painter) {
+		if (_Name != null) {
+			painter.drawCentredText(_Name,_x,_y,_width,_height);
+		}
+		paintRobot(painter);
+	}
+
+	/**
 	 * Method to be implemented by concrete subclasses to handle subclass
 	 * specific painting.
-	 * @param painter the Painter object used for drawing.
+	 * @param paint the Painter object used for drawing.
 	 */
-	public abstract void paint(Painter painter);
+	public abstract void paintRobot(Painter paint);
 
 	/**
 	 * Returns this Robot object's x position.
@@ -163,20 +183,64 @@ public abstract class Robot {
 		return _height;
 	}
 
+	/**
+	 *
+	 * @return returns if the robot has bounced off a vertical wall
+	 */
 	public boolean didBounceOffVertical() {
 		return _didBounceOffVertical;
 	}
 
+	/**
+	 *
+	 * @return returns if the robot has bounced off a horizontal wall
+	 */
 	public boolean didBounceOffHorizontal() {
 		return _didBounceOffHorizontal;
 	}
 	
 	/**
-	 * Returns a String whose value is the fully qualified name of this class 
+	 * @return Returns a String whose value is the fully qualified name of this class
 	 * of object. E.g., when called on a WheeledRobot instance, this method 
 	 * will return "robot.WheeledRobot".
 	 */
 	public String toString() {
 		return getClass().getName();
+	}
+
+	/**
+	 * Method to find out the parent of a robot
+	 * @return null if there is no parent for the robot or the parent robot instance if there is
+	 * a parent robot associated
+	 */
+	public CarrierRobot parent() {
+		return _ParentCarrierRobot;
+	}
+
+	/**
+	 * Method to get the hierarchy of a robot. This method is useful when there are robots
+	 * which can carry other robots
+	 * @return a list of 'Robot'(s) that are in the path of the particular robot instance.
+	 *
+	 */
+	public List<Robot> path() {
+		List<Robot> temp = new ArrayList<>();
+		if (this._ParentCarrierRobot == null) {
+			temp.add(this);
+			return temp;
+		} else {
+			temp.addAll(this._ParentCarrierRobot.path());
+			temp.add(this);
+			return temp;
+		}
+	}
+
+	/**
+	 * Method to set the name of a robot. This method should be called if text needs to be painted
+	 * for a robot. Once set, it will always be ensured that the name is printed on the AnimationViewer.
+	 * @param name text for the name that needs to be displayed.
+	 */
+	public void setName(String name) {
+		_Name = name;
 	}
 }

@@ -35,4 +35,8 @@ public interface Painter {
 	public Color getColor();
 
 	public void drawImage(Image image, int x, int y, ImageObserver observer);
+
+	public void translate(int x, int y);
+
+	public void drawCentredText(String name, int x, int y, int width, int height);
 }

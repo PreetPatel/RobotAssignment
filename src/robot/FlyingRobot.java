@@ -1,7 +1,5 @@
 package robot;
 
-import java.awt.*;
-
 /**
  * Class to represent a flying robot.
  *
@@ -45,10 +43,14 @@ public class FlyingRobot extends Robot {
         super(x,y,deltaX,deltaY,width,height);
     }
 
+    public FlyingRobot(int x, int y, int deltaX, int deltaY, int width, int height, String name) {
+        super(x,y,deltaX,deltaY,width,height);
+    }
+
     /**
-     * Paints this WheeledRobot object using the supplied Painter object.
+     * Paints this FlyingRobot object using the supplied Painter object.
      */
-    public void paint(Painter painter) {
+    public void paintRobot(Painter painter) {
         painter.drawOval(_x,_y,_width,_height);
     }
 }

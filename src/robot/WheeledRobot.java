@@ -42,11 +42,15 @@ public class WheeledRobot extends Robot {
 	public WheeledRobot(int x, int y, int deltaX, int deltaY, int width, int height) {
 		super(x,y,deltaX,deltaY,width,height);
 	}
+
+	public WheeledRobot(int x, int y, int deltaX, int deltaY, int width, int height, String name) {
+		super(x,y,deltaX,deltaY,width,height);
+	}
 	
 	/**
 	 * Paints this WheeledRobot object using the supplied Painter object.
 	 */
-	public void paint(Painter painter) {
+	public void paintRobot(Painter painter) {
 		painter.drawRect(_x,_y,_width,_height);
 	}
 }

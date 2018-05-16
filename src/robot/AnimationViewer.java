@@ -43,18 +43,33 @@ public class AnimationViewer extends JPanel implements ActionListener {
 		_robots = new ArrayList<Robot>();
 	
 		// Populate the list of Robots.
-		_robots.add(new WheeledRobot(0, 0, 2, 3));
-		_robots.add(new WheeledRobot(10, 10, 5, 7));
+		WheeledRobot withName = new WheeledRobot(0, 0, 2, 3,30,30);
+		withName.setName("Hello Darkness My Old Friend");
+		//_robots.add(withName);
+		//_robots.add(new WheeledRobot(10, 10, 5, 7));
 		_robots.add(new FlyingRobot(13,13,4,8));
 		_robots.add(new TrackedRobot(13,23,2,5, 60,60));
-		_robots.add(new TrackedRobot(11,13,2,5));
-		_robots.add(new TrackedRobot(11,21,5,1, 40,40));
-		_robots.add(new TrackedRobot(15,12,4,3, 30,30));
+		//_robots.add(new TrackedRobot(11,13,2,5));
+		//_robots.add(new TrackedRobot(11,21,5,1, 40,40));
+		//_robots.add(new TrackedRobot(15,12,4,3, 30,30));
 		_robots.add(new DynamicWheeledRobot(23,16,2,6, 45,45));
-		_robots.add(new DynamicWheeledRobot(90,1,7,6, 60,45, Color.red));
+		//_robots.add(new DynamicWheeledRobot(90,1,7,6, 60,45, Color.red));
 		_robots.add(new AggrgateRobot(11,19,6,4, 45,45));
-		_robots.add(new AggrgateRobot(60,11,3,4, 30,30));
-		_robots.add(new DynamicWheeledRobot(5, 5, -12, -15));
+
+		CarrierRobot _topLevelNest = new CarrierRobot(0, 0, 2, 2, 200, 200);
+		CarrierRobot _midLevelNest = new CarrierRobot(0, 0, 1, 1, 99, 99);
+		CarrierRobot _bottomLevelNest = new CarrierRobot(5, 5, 1, 2, 80, 80);
+		AggrgateRobot _simpleRobot = new AggrgateRobot(1, 1, 1, 1, 10, 10);
+
+		_bottomLevelNest.add(withName);
+		_midLevelNest.add(_bottomLevelNest);
+		_midLevelNest.add(_simpleRobot);
+		_topLevelNest.add(_midLevelNest);
+
+		_robots.add(_topLevelNest);
+
+		//_robots.add(new AggrgateRobot(60,11,3,4, 30,30));
+		//_robots.add(new DynamicWheeledRobot(5, 5, -12, -15));
 
 
 		// Start the animation.

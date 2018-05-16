@@ -66,4 +66,14 @@ public class MockPainter implements Painter {
 	public void drawImage(Image image, int x, int y, ImageObserver observer) {
 		_log.append("(Image drawn " + x + y + ")");
 	}
+
+	@Override
+	public void translate(int x, int y) {
+
+	}
+
+	@Override
+	public void drawCentredText(String name, int x, int y, int width, int height) {
+
+	}
 }

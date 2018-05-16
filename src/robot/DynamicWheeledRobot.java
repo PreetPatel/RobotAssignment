@@ -2,6 +2,13 @@ package robot;
 
 import java.awt.*;
 
+/**
+ * Class to represent a DynamicWheeled robot.
+ *
+ * @author Preet Patel
+ *
+ */
+
 public class DynamicWheeledRobot extends WheeledRobot{
     private Color _RobotColor;
     private boolean hasBouncedOffVertical = false;
@@ -35,6 +42,16 @@ public class DynamicWheeledRobot extends WheeledRobot{
 
     }
 
+    public DynamicWheeledRobot(int x, int y, int deltaX, int deltaY, int width, int height, Color robotColor, String name) {
+        super(x,y,deltaX,deltaY,width,height);
+        _RobotColor = robotColor;
+
+    }
+
+    /**
+     * Draws a robot with a filled color specified by the input.
+     * @param painter
+     */
     public void drawFilledRobot(Painter painter) {
 
         Color temp = painter.getColor();
@@ -45,11 +62,11 @@ public class DynamicWheeledRobot extends WheeledRobot{
     }
 
     /**
-     * Paints this WheeledRobot object using the supplied Painter object.
+     * Paints this DynamicWheeledRobot object using the supplied Painter object.
      */
-    public void paint(Painter painter) {
+    public void paintRobot(Painter painter) {
 
-        if (this.didBounceOffVertical() && this.didBounceOffVertical()) {
+        if (this.didBounceOffVertical() && this.didBounceOffHorizontal()) {
            drawFilledRobot(painter);
         } else if (this.didBounceOffVertical()) {
             drawFilledRobot(painter);

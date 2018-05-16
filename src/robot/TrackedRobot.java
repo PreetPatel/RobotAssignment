@@ -9,7 +9,7 @@ package robot;
 
 public class TrackedRobot extends Robot{
     /**
-     * Default constructor that creates a FlyingRobot instance whose instance
+     * Default constructor that creates a TrackedRobot instance whose instance
      * variables are set to default values.
      */
     public TrackedRobot() {
@@ -17,7 +17,7 @@ public class TrackedRobot extends Robot{
     }
 
     /**
-     * Creates a FlyingRobot instance with specified values for instance
+     * Creates a TrackedRobot instance with specified values for instance
      * variables.
      * @param x x position.
      * @param y y position.
@@ -29,7 +29,7 @@ public class TrackedRobot extends Robot{
     }
 
     /**
-     * Creates a FlyingRobot instance with specified values for instance
+     * Creates a TrackedRobot instance with specified values for instance
      * variables.
      * @param x x position.
      * @param y y position.
@@ -44,10 +44,14 @@ public class TrackedRobot extends Robot{
         super(x,y,deltaX,deltaY,width,height);
     }
 
+    public TrackedRobot(int x, int y, int deltaX, int deltaY, int width, int height, String name) {
+        super(x,y,deltaX,deltaY,width,height);
+    }
+
     /**
-     * Paints this WheeledRobot object using the supplied Painter object.
+     * Paints this TrackedRobot object using the supplied Painter object.
      */
-    public void paint(Painter painter) {
+    public void paintRobot(Painter painter) {
         int xStart = this.x();
         int yStart = this.y();
 
